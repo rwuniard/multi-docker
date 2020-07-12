@@ -17,7 +17,7 @@ after_success:
     # Login to docker hub using docker CLI
     # passing the password to the docker login std in
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    # Push images to Docker hub
+    # Pushing images to Docker hub
     - docker push ronsonw/multi-client
     - docker push ronsonw/multi-nginx
     - docker push ronsonw/multi-server
