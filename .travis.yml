@@ -23,3 +23,15 @@ after_success:
     - docker push rwuniard/multi-nginx
     - docker push rwuniard/multi-server
     - docker push rwuniard/multi-worker
+
+deploy:
+    provider: elasticbeanstalk
+    region: us-west-2
+    app: multi-docker
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-us-west-2-850652371396
+    bucket_path: docker-multi
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
