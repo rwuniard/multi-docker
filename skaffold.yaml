@@ -1,8 +1,8 @@
 apiVersion: skaffold/v1beta2
 kind: Config
 build:
-  local:
-    push: false
+  local: # this means don't push to your git repo
+    push: false # when the setting is set to false.
   artifacts:
     - image: rwuniard/multi-client
       context: client
